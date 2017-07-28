@@ -12,7 +12,7 @@ $(document).ready(function() {
 	setInterval(loadWeather, 10000);
 });
 
-function loadWeather(location, woeid){
+function loadWeather(position, woeid){
 	$.simpleWeather({
 		location: location,
 		woeid: woeid,
