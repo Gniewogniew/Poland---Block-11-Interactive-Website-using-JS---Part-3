@@ -1,6 +1,6 @@
 if("geolocation" in navigator){
 	navigator.geolocation.getCurrentPosition(function(position){
-		loadWeather(position.coords.latitude + " , " + positon.coords.longitude);
+		loadWeather(position.coords.latitude + " , " + positon.cords.longitude);
 	});
 }else {
 	loadWeather("Szczecin, PL", "");
@@ -20,7 +20,7 @@ function loadWeather(location, woeid){
 		success: function(weather){
 			city = weather.city;
 			temp = weather.temp +" &deg;";
-			wcode = "<img class = "weathericon" src="images/weathericons/" + weather.code + ".svg">";
+			wcode = "<img class = weathericon src=images/weathericons/ + weather.code + .svg>";
 			wind = "<p>" + weather.wind.speed + "</p><p>" + weather.units.speed + "</p>";
 			humidity = weather.humidity + "&";
 			
