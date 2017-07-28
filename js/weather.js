@@ -1,6 +1,6 @@
 if("geolocation" in navigator){
 	navigator.geolocation.getCurrentPosition(function(position){
-		loadWeather(position.coords.latitude + " , " + positon.coords.longitude);
+		loadWeather(position.coords.latitude + " , " + position.coords.longitude);
 	});
 }else {
 	loadWeather("Szczecin, PL", "");
