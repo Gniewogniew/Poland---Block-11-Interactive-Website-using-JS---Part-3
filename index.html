@@ -1,27 +1,31 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>Weather App</title>
-  <link rel="stylesheet" href="css/standardize.css">
-  <link rel="stylesheet" href="css/index.css">
-</head>
-<body class="body page-index clearfix">
-  <div class="container clearfix">
-    <p class="location"></p>
-    <p class="temperature"></p>
-    <div class="climate_bg"></div>
-    <div class="info_bg">
-      <img class="dropicon" src="images/Droplet.svg">
-      <p class="humidity"></p>
-
-      <img class="windicon" src="images/Wind.svg">
-      <div class="windspeed"></div>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1.0">
+      <title>Weather App</title>
+      <link rel="stylesheet" href="css/standardize.css">
+      <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body class="body page-index clearfix">
+      <div class="container clearfix">
+        <p class="location"></p>
+        <img class="sunriseImg" src="images/sunrise.png" alt="">
+        <p class="sunrise"></p>
+        <img class="sunsetImg" src="images/sunset.png" alt="">
+        <p class="sunset"></p>
+        <p class="temperature"></p>
+        <div class="climate_bg"></div>
+        <div class="info_bg">
+          <img class="dropicon" src="images/Droplet.svg" alt="">
+          <p class="humidity"></p>
+          <img class="windicon" src="images/win.png" alt="">
+          <div class="windspeed"></div>
+        </div>
+      <div class="error"></div>
     </div>
-  </div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
-<script type="text/javascript" src="js/weather.js"></script>
-</body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
+    </body>
 </html>
