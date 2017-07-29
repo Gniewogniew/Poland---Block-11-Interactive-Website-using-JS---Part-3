@@ -3,11 +3,9 @@
   font: 400 1em/1.38 Montserrat;
   color: #ffffff;
 }
-
 .info_bg p {
   margin-bottom: -.2em;
 }
-
 .climate_bg {
   position: absolute;
   top: 0;
@@ -18,8 +16,7 @@
   border-top-right-radius: 10px;
   background-color: rgb(255, 255, 255);
 }
-
-.weathericons {
+.weathericon {
   display: block;
   position: absolute;
   top: -5px;
@@ -29,7 +26,6 @@
   height: auto;
   overflow: hidden;
 }
-
 .container {
   position: absolute;
   top: 0;
@@ -41,35 +37,31 @@
   height: 208px;
   margin: auto;
   border-radius: 10px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 36, 184);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   opacity: 0.8;
 }
-
 .dropicon {
   display: block;
   position: absolute;
   top: 9px;
-  left: -3.9110429448%;
+  left: -1.911043%;
   z-index: 3;
-  width: 41px;
+  width: 45px;
   height: auto;
   overflow: hidden;
 }
-
-.not-available, .failed {
+.not-available, .error {
   position: absolute;
-  top: 464px;
+  top: 228px;
   left: 0;
   right: 0;
   z-index: 10;
-  width: 248px;
-  min-height: 24px;
+  width: 208px;
   margin: 0 auto;
-  font: 0.625em/1.38 'Trebuchet MS';
-  color: rgb(0, 0, 0);
+  font: 1.625em/1.38 'Trebuchet MS';
+  color: rgb(248, 6, 6);
 }
-
 .humidity {
   position: absolute;
   top: 19px;
@@ -82,7 +74,6 @@
   text-align: center;
   color: #ffffff;
 }
-
 .info_bg {
   position: absolute;
   top: 149px;
@@ -93,45 +84,64 @@
   border-bottom-right-radius: 10px;
   background-color: #1ab1ed;
 }
-
 .location {
   position: absolute;
-  top: 128px;
-  left: 63px;
+  top: 85px;
+  left: 60px;
   z-index: 8;
-  width: 108px;
-  min-height: 59px;
-  font-size: 1.313em;
+  width: 180px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.38;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
 }
-
-.temperature {
+.sunriseImg {
   position: absolute;
-  top: 38px;
-  left: 72px;
-  z-index: 7;
-  width: 109px;
-  min-height: 28px;
-  font-size: 4.25em;
-  font-weight: 700;
-  line-height: 1.38;
+  top: 124px;
+  width: 80px;
+  left: 24px;
+}
+.sunsetImg {
+  position: absolute;
+  top: 124px;
+  width: 80px;
+  left: 141px;
+}
+.sunrise {
+  position: absolute;
+  top: 182px;
+  left: 36px;
+  font-size: 17px;
+  text-transform: uppercase;
   color: rgb(255, 255, 255);
 }
-
+.sunset{
+  position: absolute;
+  top: 182px;
+  left: 158px;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+.temperature {
+  position: absolute;
+  left: 38px;
+  z-index: 7;
+  font-size: 4.25em;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
 .windicon {
   display: block;
   position: absolute;
-  top: 5px;
+  top: 9px;
   left: 43.1173312883%;
   z-index: 1;
-  width: 50px;
+  width: 43px;
   height: auto;
   overflow: hidden;
 }
-
 .windspeed {
   position: absolute;
   top: 9px;
@@ -143,7 +153,6 @@
   text-align: center;
   color: #ffffff;
 }
-
 .windspeed p {
   margin-bottom: -.2em;
 }
