@@ -87,7 +87,7 @@
 .location {
   position: absolute;
   top: 85px;
-  left: 60px;
+  left: 50px;
   z-index: 8;
   width: 180px;
   font-size: 15px;
@@ -111,7 +111,7 @@
 .sunrise {
   position: absolute;
   top: 182px;
-  left: 36px;
+  left: 37px;
   font-size: 17px;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
@@ -119,7 +119,7 @@
 .sunset{
   position: absolute;
   top: 182px;
-  left: 158px;
+  left: 155px;
   font-size: 17px;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
