@@ -12,7 +12,7 @@ $("geolocation").ready(function() {
 			success: function(weather){
 				city = weather.city + ',' + weather.region;
 				temp = weather.temp +" &deg;" + weather.units.temp;
-				wcode = '<img class="weathericon" src="images/weathericon/'+weather.code+'.svg">';
+				wcode = '<img class="weathericon" src="images/weathericons/'+weather.code+'.svg">';
 				wind = "<p>" + weather.wind.speed + "</p><p>" + weather.units.speed + "</p>";
 				humidity = weather.humidity + " %";
 				sunrise = weather.sunrise;
