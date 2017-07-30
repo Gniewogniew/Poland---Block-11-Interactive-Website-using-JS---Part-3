@@ -1,6 +1,7 @@
   body {
   background-color: #bebebe;
-  font: 400 1em/1.38 Montserrat;
+  font: Verdana;
+  font-size: 1.1em;
   color: #ffffff;
 }
 .info_bg p {
@@ -19,12 +20,38 @@
 .weathericon {
   display: block;
   position: absolute;
-  top: -5px;
-  left: 1.226993865%;
+  left: -7.773006%;
   z-index: 5;
-  width: 160px;
+  width: 180px;
+  bottom: -20px;
   height: auto;
   overflow: hidden;
+}
+.check-weather{
+  position: absolute;
+  top: 298px;
+  left: 762px;
+  padding: 40px;
+  background-color: #1ab1ed;
+  border-radius: 10px;
+  width: 396px;
+  height: 85px;
+}
+.check-weather p {
+  position: absolute;;
+  top:10px;
+  left: 25px;
+  font-size: 17px;
+}
+#check-weather-input{
+  color: #000000;
+  border-radius: 10px;
+  padding: 3px;
+}
+#check-weather-button{
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 3px;
 }
 .container {
   position: absolute;
@@ -86,8 +113,8 @@
 }
 .location {
   position: absolute;
-  top: 85px;
-  left: 50px;
+  top: 90px;
+  left: 35px;
   z-index: 8;
   width: 180px;
   font-size: 17px;
@@ -100,7 +127,7 @@
   position: absolute;
   top: 124px;
   width: 80px;
-  left: 24px;
+  left: 19px;
 }
 .sunsetImg {
   position: absolute;
@@ -111,7 +138,7 @@
 .sunrise {
   position: absolute;
   top: 182px;
-  left: 37px;
+  left: 27px;
   font-size: 17px;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
@@ -119,14 +146,15 @@
 .sunset{
   position: absolute;
   top: 182px;
-  left: 155px;
+  left: 148px;
   font-size: 17px;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
 }
 .temperature {
   position: absolute;
-  left: 38px;
+  left: 35px;
+  top: 10px;
   z-index: 7;
   font-size: 4.25em;
   font-weight: 700;
