@@ -15,7 +15,7 @@ $("geolocation").ready(function() {
 			woeid: woeid,
 			unit: 'c',
 			success: function(weather){
-				city = weather.city + ',' + weather.region;
+				city = weather.title;
 				temp = weather.temp +" &deg;" + weather.units.temp;
 				wcode = '<img class="weathericon" src="images/weathericons/'+weather.code+'.svg">';
 				wind = "<p>" + weather.wind.speed + "</p><p>" + weather.units.speed + "</p>";
@@ -47,7 +47,7 @@ var weatherAroundTheWorld = function(event){
 			woeid: '',
 			unit: 'c',
 			success: function(weather){
-				city = weather.city + ',' + weather.region;
+				city = weather.title;
 				temp = weather.temp +" &deg;" + weather.units.temp;
 				wcode = '<img class="weathericon" src="images/weathericons/'+weather.code+'.svg">';
 				wind = "<p>" + weather.wind.speed + "</p><p>" + weather.units.speed + "</p>";
