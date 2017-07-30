@@ -29,8 +29,7 @@
 }
 .check-weather{
   position: absolute;
-  top: 298px;
-  left: 762px;
+  bottom: 208px;
   padding: 40px;
   background-color: #1ab1ed;
   border-radius: 10px;
