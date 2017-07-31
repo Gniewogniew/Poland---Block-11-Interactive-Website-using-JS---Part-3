@@ -42,7 +42,7 @@ var globalinputText;
 var weatherAroundTheWorld = function(event){
 	var city = (event.target)
 	var inputText = (event.target.previousElementSibling).value;
-	globalinputText = input;
+	globalinputText = inputText;
 	$(".error").html("");
 	$(loadWeather)
 	$("#check-weather-input").val("");
