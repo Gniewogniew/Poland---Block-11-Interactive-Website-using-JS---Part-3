@@ -3,17 +3,13 @@ function attachEventHandlers (){
 	$("#submit").click(weatherAroundTheWorld);
 	$("#check-weather-button").click(weatherAroundTheWorld);
 	$("#check-weather-input").keypress(inputTextClickHandler);
-	
 }
-
 var geolocationHandler = function(event){
  	navigator.geolocation.getCurrentPosition(function(position) {
     loadWeather(position.coords.latitude+','+position.coords.longitude); 
     setInterval(loadWeather, 3600000);
 	})
 }
-
-
 function loadWeather(location, woeid){
 		$.simpleWeather({
 			location: location, globalinputText,
@@ -51,7 +47,6 @@ var weatherAroundTheWorld = function(event){
 	$(loadWeather)
 	$("#check-weather-input").val("");
 }
-
 var inputTextClickHandler = (function(event) {
         if (event.which == 13) {
             $("#check-weather-button").click();
