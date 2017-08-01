@@ -3,16 +3,19 @@ function attachEventHandlers (){
 	$("#submit").click(weatherAroundTheWorld);
 	$("#check-weather-button").click(weatherAroundTheWorld);
 	$("#check-weather-input").keypress(inputTextClickHandler);
+	
 }
+
 var geolocationHandler = function(event){
  	navigator.geolocation.getCurrentPosition(function(position) {
     loadWeather(position.coords.latitude+','+position.coords.longitude); 
     setInterval(loadWeather, 3600000);
 	})
 }
+
 function loadWeather(location, woeid){
 		$.simpleWeather({
-			location: location, globalinputText,
+			location: location,
 			woeid: woeid,
 			unit: 'c',
 			success: function(weather){
@@ -38,15 +41,15 @@ function loadWeather(location, woeid){
 		});
 	}
 
-var globalinputText;
 var weatherAroundTheWorld = function(event){
 	var city = (event.target)
 	var inputText = (event.target.previousElementSibling).value;
-	globalinputText = inputText;
+	arguments[0]=inputText; 
 	$(".error").html("");
-	$(loadWeather)
+	loadWeather(inputText);
 	$("#check-weather-input").val("");
 }
+
 var inputTextClickHandler = (function(event) {
         if (event.which == 13) {
             $("#check-weather-button").click();
