@@ -1,13 +1,13 @@
 function attachEventHandlers (){
-	$("geolocation").ready(geolocationHandler);
+	$(geolocation);
 	$("#submit").click(weatherAroundTheWorld);
-	$("#check-weather-button").click(weatherAroundTheWorld);	
+	$("#check-weather-button").click(weatherAroundTheWorld);
 }
 
-var geolocationHandler = function(event){
+var geolocation = function(event){
  	navigator.geolocation.getCurrentPosition(function(position) {
     loadWeather(position.coords.latitude+','+position.coords.longitude); 
-    setInterval(loadWeather, 3600000);
+    setInterval(geolocation, 3600000);
 	})
 }
 
@@ -41,7 +41,8 @@ function loadWeather(location, woeid){
 
 var weatherAroundTheWorld = function(event){
 	var city = (event.target)
-	var inputText = (event.target.previousElementSibling).value; 
+	var inputText = (event.target.previousElementSibling).value;
+	arguments[0]=inputText; 
 	$(".error").html("");
 	loadWeather(inputText);
 	$("#check-weather-input").val("");
@@ -51,6 +52,7 @@ $("#check-weather-input").keypress(function(event){
         if (event.which == 13) {
             $("#check-weather-button").click();
     }
+
 })
 
 $(attachEventHandlers)
