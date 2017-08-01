@@ -6,9 +6,9 @@ function attachEventHandlers (){
 }
 
 var geolocationHandler = function(event){
-	navigator.geolocation.getCurrentPosition(function(position) {
-   	loadWeather(position.coords.latitude+','+position.coords.longitude); 
-   	setInterval(loadWeather, 3600000);
+ 	navigator.geolocation.getCurrentPosition(function(position) {
+    loadWeather(position.coords.latitude+','+position.coords.longitude); 
+    setInterval(loadWeather, 3600000);
 	})
 }
 
