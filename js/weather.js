@@ -2,14 +2,13 @@ function attachEventHandlers (){
 	$("geolocation").ready(geolocationHandler);
 	$("#submit").click(weatherAroundTheWorld);
 	$("#check-weather-button").click(weatherAroundTheWorld);
-	$("#check-weather-input").keypress(inputTextClickHandler);
-	
+	$("#check-weather-input").keypress(inputTextClickHandler);	
 }
 
 var geolocationHandler = function(event){
- 	navigator.geolocation.getCurrentPosition(function(position) {
-    loadWeather(position.coords.latitude+','+position.coords.longitude); 
-    setInterval(loadWeather, 3600000);
+	navigator.geolocation.getCurrentPosition(function(position) {
+   	loadWeather(position.coords.latitude+','+position.coords.longitude); 
+   	setInterval(loadWeather, 3600000);
 	})
 }
 
