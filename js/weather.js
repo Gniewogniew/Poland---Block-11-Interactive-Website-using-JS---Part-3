@@ -42,8 +42,7 @@ function loadWeather(location, woeid){
 
 var weatherAroundTheWorld = function(event){
 	var city = (event.target)
-	var inputText = (event.target.previousElementSibling).value;
-	arguments[0]=inputText; 
+	var inputText = (event.target.previousElementSibling).value; 
 	$(".error").html("");
 	loadWeather(inputText);
 	$("#check-weather-input").val("");
