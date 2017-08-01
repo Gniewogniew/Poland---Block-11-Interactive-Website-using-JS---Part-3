@@ -1,8 +1,7 @@
 function attachEventHandlers (){
 	$("geolocation").ready(geolocationHandler);
 	$("#submit").click(weatherAroundTheWorld);
-	$("#check-weather-button").click(weatherAroundTheWorld);
-	$("#check-weather-input").keypress(inputTextClickHandler);	
+	$("#check-weather-button").click(weatherAroundTheWorld);	
 }
 
 var geolocationHandler = function(event){
@@ -48,10 +47,11 @@ var weatherAroundTheWorld = function(event){
 	$("#check-weather-input").val("");
 }
 
-var inputTextClickHandler = (function(event) {
+$("#check-weather-input").keypress(function(event){
         if (event.which == 13) {
             $("#check-weather-button").click();
     }
-});
+
+})
 
 $(attachEventHandlers)
