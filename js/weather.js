@@ -5,15 +5,15 @@ function attachEventHandlers (){
 }
 
 var geolocation = function(event){
- 	navigator.geolocation.getCurrentPosition(success, denied);
-    	function success(position){
-    	loadWeather(position.coords.latitude+','+position.coords.longitude);
-	setInterval(geolocation, 3600000);
-	}
-    	function denied(position) {
-  	loadWeather(52.22967560 + ',' + 21.01222870);
-  	setInterval(geolocation, 3600000);
-  	}
+	navigator.geolocation.getCurrentPosition(accepted, denied);
+		function accepted(position){
+		loadWeather(position.coords.latitude+','+position.coords.longitude);
+		setInterval(geolocation, 3600000);
+		}
+		function denied(position) {
+	  	loadWeather(52.22967560 + ',' + 21.01222870);
+	  	setInterval(geolocation, 3600000);
+	  	}
 }
 
 function loadWeather(location, woeid){
