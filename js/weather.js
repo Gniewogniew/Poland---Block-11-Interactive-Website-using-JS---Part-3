@@ -5,8 +5,9 @@ function attachEventHandlers (){
 }
 
 var geolocation = function(event){
-	navigator.geolocation.getCurrentPosition(function(position) {
-    	loadWeather(position.coords.latitude+','+position.coords.longitude); 
+ 	loadWeather(52.22967560 + ',' + 21.01222870)
+ 	navigator.geolocation.getCurrentPosition(function(position) {
+    	loadWeather(position.coords.latitude+','+position.coords.longitude);
     	setInterval(geolocation, 3600000);
 	})
 }
@@ -42,7 +43,6 @@ function loadWeather(location, woeid){
 var weatherAroundTheWorld = function(event){
 	var city = (event.target)
 	var inputText = (event.target.previousElementSibling).value;
-	arguments[0]=inputText; 
 	$(".error").html("");
 	loadWeather(inputText);
 	$("#check-weather-input").val("");
@@ -52,7 +52,6 @@ $("#check-weather-input").keypress(function(event){
         if (event.which == 13) {
             $("#check-weather-button").click();
     }
-
 })
 
 $(attachEventHandlers)
