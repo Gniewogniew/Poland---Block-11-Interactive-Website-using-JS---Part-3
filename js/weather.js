@@ -1,4 +1,4 @@
-$(function(){ 
+$(function main(){ 
 
 function attachEventHandlers (){
 	$("#submit").click(weatherAroundTheWorld);
