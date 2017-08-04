@@ -4,9 +4,9 @@ function attachEventHandlers (){
 	$("#submit").click(weatherAroundTheWorld);
 	$("#check-weather-button").click(weatherAroundTheWorld);
 	$("#check-weather-input").keypress(function(event){
-        if (event.which == 13) {
-		$("#check-weather-button").click();
-    		}
+        	if (event.which == 13) {
+			$("#check-weather-button").click();
+    			}
 	})
 }
 
@@ -59,4 +59,4 @@ var weatherAroundTheWorld = function(event){
 }
 $(geolocation);
 $(attachEventHandlers);
-})
+});
