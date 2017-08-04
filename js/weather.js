@@ -1,20 +1,26 @@
+$(function(){ 
+
 function attachEventHandlers (){
-	$(geolocation);
 	$("#submit").click(weatherAroundTheWorld);
 	$("#check-weather-button").click(weatherAroundTheWorld);
+	$("#check-weather-input").keypress(function(event){
+        if (event.which == 13) {
+		$("#check-weather-button").click();
+    		}
+	})
 }
 
 var geolocation = function(event){
-	navigator.geolocation.getCurrentPosition(accepted, denied);
-		function accepted(position){
-		loadWeather(position.coords.latitude+','+position.coords.longitude);
+ 	navigator.geolocation.getCurrentPosition(locationFromGoelocation, defaultLocation);
+ 	}
+		function locationFromGoelocation(position){
+	    	loadWeather(position.coords.latitude+','+position.coords.longitude);
 		setInterval(geolocation, 3600000);
 		}
-		function denied(position) {
+	    	function defaultLocation(position) {
 	  	loadWeather(52.22967560 + ',' + 21.01222870);
 	  	setInterval(geolocation, 3600000);
 	  	}
-}
 
 function loadWeather(location, woeid){
 		$.simpleWeather({
@@ -45,17 +51,12 @@ function loadWeather(location, woeid){
 	}
 
 var weatherAroundTheWorld = function(event){
-	var city = (event.target)
+	var city = (event.target);
 	var inputText = (event.target.previousElementSibling).value;
 	$(".error").html("");
 	loadWeather(inputText);
 	$("#check-weather-input").val("");
 }
-
-$("#check-weather-input").keypress(function(event){
-        if (event.which == 13) {
-            $("#check-weather-button").click();
-    }
+$(geolocation);
+$(attachEventHandlers);
 })
-
-$(attachEventHandlers)
