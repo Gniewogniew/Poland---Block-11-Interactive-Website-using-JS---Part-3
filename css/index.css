@@ -114,15 +114,13 @@
 }
 .location {
   position: absolute;
-  top: 90px;
-  left: 35px;
+  top: 81px;
+  left: 11px;
   z-index: 8;
-  width: 180px;
-  font-size: 17px;
-  font-weight: 400;
+  width: 210px;
+  font-size: 18px;
   line-height: 1.38;
-  text-transform: uppercase;
-  color: rgb(255, 255, 255);
+  text-align: center;
 }
 .sunriseImg {
   position: absolute;
@@ -159,7 +157,6 @@
   z-index: 7;
   font-size: 4.25em;
   font-weight: 700;
-  color: rgb(255, 255, 255);
 }
 .windicon {
   display: block;
