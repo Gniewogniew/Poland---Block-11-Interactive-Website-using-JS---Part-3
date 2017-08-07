@@ -1,10 +1,10 @@
-function showUp(){
+function showUp() {
     geolocation();
-    getWeatherFromUserInput();
+    getWeatherFromUserInput()
 
     function getWeatherFromUserInput() {
         $("#cityValue").keypress(function(event) {
-            if (event.which === 13); {
+            if (event.which === 13) {
                 $("#submitCity").click();
             }
         });
@@ -16,13 +16,17 @@ function showUp(){
     }
 
 	function geolocation(event){
- 		navigator.geolocation.getCurrentPosition(locationFromGoelocation, defaultLocation);
+ 		if("geolocation" in navigator){
+ 			navigator.geolocation.getCurrentPosition(locationFromGoelocation, defaultLocation);
+ 		}else{
+ 			loadWeather(52.22967560 + ',' + 21.01222870);
+ 		}
  	}
 	function locationFromGoelocation(position){
 	    loadWeather(position.coords.latitude+','+position.coords.longitude);
 		setTimeout(geolocation, 3600000);
 	}
-	function defaultLocation(position){
+	function defaultLocation(position) {
 	  	loadWeather(52.22967560 + ',' + 21.01222870);
 	  	setTimeout(geolocation, 3600000);
 	}
