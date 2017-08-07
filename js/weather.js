@@ -1,6 +1,6 @@
 function showUp(){
     geolocation();
-    getWeatherFromUserInput()
+    getWeatherFromUserInput();
 
     function getWeatherFromUserInput() {
         $("#cityValue").keypress(function(event) {
