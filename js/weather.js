@@ -1,32 +1,33 @@
 function showUp() {
     geolocation();
-    getWeatherFromUserInput()
+    UserWeatherLocationFromInput()
 
-    function getWeatherFromUserInput() {
-        $("#cityValue").keypress(function(event) {
+    function UserWeatherLocationFromInput() {
+        $("#cityValueFromInput").keypress(function(event) {
             if (event.which === 13) {
-                $("#submitCity").click();
+                loadWeather($("#cityValueFromInput").val());
             }
         });
-        $("#submitCity").click(function() {
+        $("#userCityLoadButton").click(function() {
             $(".error").html("");
-            loadWeather($("#cityValue").val());
-            $("#cityValue").val("");
+            loadWeather($("#cityValueFromInput").val());
+            $("#cityValueFromInput").val("");
         });
     }
 
-	function geolocation(event){
+	function geolocation() {
  		if("geolocation" in navigator){
- 			navigator.geolocation.getCurrentPosition(locationFromGoelocation, defaultLocation);
+ 			navigator.geolocation.getCurrentPosition(UserLocationFromGoelocation, LoadDefaultLocation);
  		}else{
  			loadWeather(52.22967560 + ',' + 21.01222870);
+ 			setTimeout(geolocation, 600000);
  		}
  	}
-	function locationFromGoelocation(position){
+	function UserLocationFromGoelocation(position) {
 	    loadWeather(position.coords.latitude+','+position.coords.longitude);
 		setTimeout(geolocation, 3600000);
 	}
-	function defaultLocation(position) {
+	function LoadDefaultLocation(position) {
 	  	loadWeather(52.22967560 + ',' + 21.01222870);
 	  	setTimeout(geolocation, 3600000);
 	}
@@ -54,6 +55,7 @@ function showUp() {
                 $(".sunset").text(sunset);
             },
             error: function(error) {
+            	$("#cityValue").val("");
                 $(".error").html("<p>" + error + "</p>");
             }
         });
