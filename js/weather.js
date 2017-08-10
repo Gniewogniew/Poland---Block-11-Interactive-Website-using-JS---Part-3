@@ -20,7 +20,7 @@ function showUp() {
  			navigator.geolocation.getCurrentPosition(UserLocationFromGoelocation, LoadDefaultLocation);
  		}else{
  			loadWeather(52.22967560 + ',' + 21.01222870);
- 			setTimeout(geolocation, 600000);
+ 			setTimeout(loadWeather(52.22967560 + ',' + 21.01222870), 600000);
  		}
  	}
 	function UserLocationFromGoelocation(position) {
