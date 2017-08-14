@@ -1,6 +1,6 @@
 function showUp() {
     geolocation();
-    operationsToGetWeatherFromUserInput()
+    operationsToGetWeatherFromUserInput();
 
     function operationsToGetWeatherFromUserInput() {
     $("#cityValueFromInput").keypress(function(event) {
@@ -24,9 +24,9 @@ function showUp() {
     }
 
 	function geolocation() {
- 		if("geolocation" in navigator){
+ 		if ("geolocation" in navigator) {
  			navigator.geolocation.getCurrentPosition(UserLocationFromGoelocation, LoadDefaultLocation);
- 		}else{
+ 		} else {
  			loadWeather(52.22967560 + ',' + 21.01222870);
  			setInterval(loadWeather(52.22967560 + ',' + 21.01222870), 60000);
  		}
