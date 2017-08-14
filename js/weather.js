@@ -7,8 +7,8 @@ function showUp() {
             if ((event.which === 13) || ($("#cityValueFromInput").val() === "")) {
 
             }else{
-				getWeatherFromUserInput()
-            	}
+		    getWeatherFromUserInput()
+            }
         });
         $("#userCityLoadButton").click(function() {
         	getWeatherFromUserInput()
