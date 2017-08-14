@@ -1,18 +1,18 @@
 function showUp() {
     geolocation();
-    UserWeatherLocationFromInput()
+    operationsToGetWeatherFromUserInput()
 
-    function UserWeatherLocationFromInput() {
+    function operationsToGetWeatherFromUserInput() {
     $("#cityValueFromInput").keypress(function(event) {
         if ($("#cityValueFromInput").val() === '') {
         } else if (event.which === 13) {
-            getWeatherFromUserInput()
+            getWeatherFromUserInput();
 	}
     });
     $("#userCityLoadButton").click(function() {
         if ($("#cityValueFromInput").val() === '') {
         } else {
-		getWeatherFromUserInput()
+		getWeatherFromUserInput();
         }
     });
 }
