@@ -3,18 +3,19 @@ function showUp() {
     UserWeatherLocationFromInput()
 
     function UserWeatherLocationFromInput() {
-        $("#cityValueFromInput").keypress(function(event) {
-            if ((event.which === 13) || ($("#cityValueFromInput").val() === "")) {
-
-            }else{
-		    getWeatherFromUserInput()
-            }
-        });
-        $("#userCityLoadButton").click(function() {
-        	getWeatherFromUserInput()
-              
-        });
-    }
+    $("#cityValueFromInput").keypress(function(event) {
+        if ($("#cityValueFromInput").val() === '') {
+        } else if (event.which === 13) {
+            getWeatherFromUserInput()
+	}
+    });
+    $("#userCityLoadButton").click(function() {
+        if ($("#cityValueFromInput").val() === '') {
+        } else {
+		getWeatherFromUserInput()
+        }
+    });
+}
 
     function getWeatherFromUserInput(){
     	$(".error").html("");
