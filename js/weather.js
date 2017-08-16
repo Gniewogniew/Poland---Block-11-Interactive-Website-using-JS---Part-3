@@ -1,32 +1,30 @@
-function showUp() {
+function main() {
     geolocation();
-    operationsToGetWeatherFromUserInput();
 
-    function operationsToGetWeatherFromUserInput() {
     $("#cityValueFromInput").keypress(function(event) {
-        if ($("#cityValueFromInput").val() === '') {
-        } else if (event.which === 13) {
+        if (event.which === 13) {
             getWeatherFromUserInput();
 	}
     });
+
     $("#userCityLoadButton").click(function() {
-        if ($("#cityValueFromInput").val() === '') {
-        } else {
-		getWeatherFromUserInput();
-        }
+            getWeatherFromUserInput();
     });
-}
 
     function getWeatherFromUserInput(){
-    	$(".error").html("");
-    	loadWeather($("#cityValueFromInput").val());
-    	$("#cityValueFromInput").val("");
+    	if ($("#cityValueFromInput").val() === '') {
+		$("#cityValueFromInput").attr('disabled', false);
+        } else {       
+	    	$(".error").html("");
+	    	loadWeather($("#cityValueFromInput").val());
+	    	$("#cityValueFromInput").val("");
+	}
     }
 
 	function geolocation() {
- 		if ("geolocation" in navigator) {
+ 		if("geolocation" in navigator){
  			navigator.geolocation.getCurrentPosition(UserLocationFromGoelocation, LoadDefaultLocation);
- 		} else {
+ 		}else{
  			loadWeather(52.22967560 + ',' + 21.01222870);
  			setInterval(loadWeather(52.22967560 + ',' + 21.01222870), 60000);
  		}
@@ -69,4 +67,4 @@ function showUp() {
         });
     }
 }
-$(showUp)
+$(main)
