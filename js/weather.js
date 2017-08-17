@@ -2,21 +2,21 @@ function main() {
     geolocation();
 
     $("#cityValueFromInput").keypress(function(event) {
-        getWeatherFromUserInput()
+        getWeatherFromUserInput();
     });
 
     $("#userCityLoadButton").click(function() {
-        getWeatherFromUserInput()
+        getWeatherFromUserInput();
     });
 
     function getWeatherFromUserInput() {
         if ($("#cityValueFromInput").val() == 0) {
-            $("#userCityLoadButton").attr("disabled", false);
+		$("#userCityLoadButton").attr("disabled", false);
         } else if (($("#cityValueFromInput").val() > 0) || (event.which == 13) || event.button == 0) {
-            $("#userCityLoadButton").change($("#userCityLoadButton").attr("disabled", true));
-            $(".error").html("");
-            loadWeather($("#cityValueFromInput").val());
-            $("#cityValueFromInput").val("");
+            	$("#userCityLoadButton").change($("#userCityLoadButton").attr("disabled", true));
+            	$(".error").html("");
+            	loadWeather($("#cityValueFromInput").val());
+            	$("#cityValueFromInput").val("");
         	}
     	}
 	}
