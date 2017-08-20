@@ -1,26 +1,24 @@
 function main() {
     geolocation();
 
-    $("#cityValueFromInput").keypress(function(event) {
-        getWeatherFromUserInput();
+    $("#cityValueFromInput").keypress(function getWeatherFromUserInput() {
+    
     });
 
-    $("#userCityLoadButton").click(function() {
-        getWeatherFromUserInput();
+    $("#userCityLoadButton").click(function getWeatherFromUserInput() {
+		
     });
 
     function getWeatherFromUserInput() {
-        if ($("#cityValueFromInput").val() == 0) {
-		$("#userCityLoadButton").attr("disabled", false);
-        } else if (($("#cityValueFromInput").val() > 0) || (event.which == 13) || event.button == 0) {
-            	$("#userCityLoadButton").change($("#userCityLoadButton").attr("disabled", true));
-            	$(".error").html("");
+    	if ($("#cityValueFromInput").val() == "") {
+		$("#error-message").html("<p> Proszę wpisać miasto </p>");
+	} else if (event.which == 13 || event.button == 0) {
+           	$("#error-message").html("");
             	loadWeather($("#cityValueFromInput").val());
             	$("#cityValueFromInput").val("");
-        	}
-    	}
 	}
-
+    }
+	
 	function geolocation() {
  		if("geolocation" in navigator){
  			navigator.geolocation.getCurrentPosition(UserLocationFromGoelocation, LoadDefaultLocation);
@@ -66,4 +64,5 @@ function main() {
             }
         });
     }
+}
 $(main)
