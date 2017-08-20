@@ -79,13 +79,13 @@
   height: auto;
   overflow: hidden;
 }
-.not-available, .error {
+.not-available, #error-message {
   position: absolute;
   top: 228px;
   left: 0;
   right: 0;
   z-index: 10;
-  width: 208px;
+  width: 408px;
   margin: 0 auto;
   font: 1.625em/1.38 'Trebuchet MS';
   color: rgb(248, 6, 6);
