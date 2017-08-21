@@ -82,8 +82,7 @@
  #error-message {
   position: absolute;
   top: 228px;
-  left: 50;
-  right: 0;
+  left: 55px;
   z-index: 10;
   width: 408px;
   font: 1.625em/1.38 'Trebuchet MS';
