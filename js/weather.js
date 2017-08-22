@@ -3,11 +3,14 @@ function main() {
 
     $("#cityValueFromInput").keypress(getWeatherFromUserInput);
     $("#userCityLoadButton").click(getWeatherFromUserInput);
+    
 
     function getWeatherFromUserInput() {
         if ($("#cityValueFromInput").val() === "") {
             $("#error-message").html("Proszę wpisać miasto");
+            $("#userCityLoadButton").attr("disabled", false);
         } else if ($("#cityValueFromInput").val() < 0 || event.which == 13 || event.button == 0) {
+            $("#userCityLoadButton").change($("#userCityLoadButton").attr("disabled", true));
             $("#error-message").html("");
             loadWeather($("#cityValueFromInput").val());
             $("#cityValueFromInput").val("");
