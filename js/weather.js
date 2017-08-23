@@ -1,12 +1,12 @@
 function main() {
     geolocation();
 
-    $("#cityValueFromInput").keyup(changeButton);
+    $("#cityValueFromInput").keyup(startAndBlockButton);
     $("#cityValueFromInput").keypress(getWeatherFromUserInput)
     $("#userCityLoadButton").click(getWeatherFromUserInput);
     $("#userCityLoadButton").attr("disabled", true);
 
-    function changeButton() {
+    function startAndBlockButton() {
         if ($("#cityValueFromInput").val() != 0) {
             $("#userCityLoadButton").attr("disabled", false)
             $("#error-message").html("");
