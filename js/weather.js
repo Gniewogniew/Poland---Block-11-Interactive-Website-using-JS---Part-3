@@ -7,21 +7,16 @@ function main() {
     $("#userCityLoadButton").attr("disabled", true);
 
     function startAndBlockButton() {
-        if ($("#cityValueFromInput").val() != 0) {
+        if ($("#cityValueFromInput").val() != "") {
             $("#userCityLoadButton").attr("disabled", false)
             $("#error-message").html("");
-        } else if ($("#cityValueFromInput").val() == 0) {
+        } else if ($("#cityValueFromInput").val() == "") {
             $("#userCityLoadButton").attr("disabled", true);
         }
     }
 
     function getWeatherFromUserInput() {
-        if ($("#cityValueFromInput").val() == "") {
-            $("#error-message").show();
-            $("#error-message").html("Proszę wpisać miasto");
-        } else if (event.which == 13 || event.button == 0) {
-            $("#error-message").change($("#error-message").hide());
-            $("#error-message").html("");
+        if (event.which == 13 || event.button == 0) {
             loadWeather($("#cityValueFromInput").val());
             $("#cityValueFromInput").val("");
         }
@@ -69,7 +64,9 @@ function main() {
                 $(".sunset").text(sunset);
             },
             error: function(error) {
-                $(".error").html("<p>" + error + "</p>");
+                if ($("#cityValueFromInput").val() == "") {
+                    $("#error-message").html("Proszę wpisać miasto");
+                }
             }
         });
     }
