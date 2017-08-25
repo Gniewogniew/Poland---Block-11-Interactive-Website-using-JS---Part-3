@@ -15,6 +15,7 @@ function main() {
         if (event.which == 13 || event.button == 0) {
             loadWeather($("#cityValueFromInput").val());
             $("#cityValueFromInput").val("");
+            $("#userCityLoadButton").attr("disabled", true);
         }
     }
 
